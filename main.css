@@ -1,3 +1,4 @@
+/*
 div {
     display:flex;
     background: black;
@@ -9,3 +10,102 @@ div {
   p:hover {
     font-size: 100px;;
   }
+  */
+body {
+  background-image: url(bg.jpg);
+  background-repeat: repeat-y;
+  background-size: 100% auto;
+}
+header {
+  background-image: url(head.jpg);
+  background-repeat: no-repeat;
+  background-position: 25%;
+  background-size: cover;
+  margin: 0 2vw;
+  border: 3px dashed;
+  border-radius: 4vw;
+}
+nav {
+  margin: 2vw 1vw;
+  display:flex;
+  flex-direction: row-reverse;
+  flex-wrap: nowrap;
+  background-color: #f0f8ff64;  
+  border-radius: 4vw;
+}
+nav p {
+  margin: 1vw 1vw;
+  padding: 0.4vw 1vw;
+  background-color: aqua; 
+  border-radius: 2vw;
+  overflow:clip;
+}
+nav p:hover {
+  background-color: aliceblue;
+}
+div.header-contenedor-flex {
+  display:flex;
+  height: 10%;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+div.header-contenedor-flex p {
+  color: aliceblue;
+  background-color: black;
+  padding: 0 1vh;
+  font-weight: bold;
+  font-size: 3em;
+  font-variant: small-caps;
+  font-family: sans-serif;
+  border-radius: 3vw;
+  padding: 0 2vw;
+}
+@media (max-width: 800px) {
+  div.header-contenedor-flex p {
+  font-size: 36px;
+  }
+}
+@media (max-width: 700px) {
+  div.header-contenedor-flex p {
+  font-size: 32px;
+  }
+}
+@media (max-width: 600px) {
+  div.header-contenedor-flex p {
+  font-size: 28px;
+  }
+}
+@media (max-width: 500px) {
+  div.header-contenedor-flex p {
+  font-size: 24px;
+  }
+}
+@media (max-width: 400px) {
+  div.header-contenedor-flex p {
+  font-size: 20px;
+  }
+}
+@media (max-width: 300px) {
+  div.header-contenedor-flex p {
+  font-size: 16px;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+}
+aside, footer {
+  border: 5px dashed white;
+  width: auto;
+  height: 40vh;
+  margin: 5vw;
+  border-radius: 2vw;
+}
+
+footer {
+  height: 10vh;;
+}
+
