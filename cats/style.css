@@ -1,0 +1,122 @@
+body {
+  background-color: midnightblue;
+  overflow: clip;
+}
+
+h1 {
+  height: fit-content;
+  max-height: 8vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: clip;
+  font-size: 70px;
+  color: coral;
+  background-color: rgb(28, 28, 126);
+}
+@media (max-width: 800px) {
+  h1 {
+    font-size: 45px;
+    background-color: rgb(27, 27, 122);
+  }
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 30px;
+    color: rgb(255, 157, 100);
+    background-color: rgb(26, 26, 118);
+  }
+}
+@media (max-width: 300px) {
+  h1 {
+    font-size: 20px;
+    color: rgb(255, 187, 120);
+    background-color: rgb(25, 25, 114);
+  }
+}
+
+.grid-container {
+  height: 76vw;
+  max-height: 68vh;
+  max-width: 100%;
+  background-color: rgb(28, 28, 126);
+  gap: 1%;
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 33% 32% 32%;
+  padding: 2%;
+}
+
+.grid-container > div {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 0;
+  min-height: 100%;
+  max-height: 100%;
+  max-width: fit-content;
+  position: relative;
+  display: flex;
+  overflow: clip;
+  justify-content: center;
+  align-items: center;
+}
+
+.grid-container > div:hover {
+  /*align-items: start;*/
+  
+  animation: gatete_abajo 1s 1 normal forwards; 
+}
+.grid-container > div:not(:hover) {
+  /*align-items: start;*/
+  
+  animation: gatete_arriba 2s 1 normal forwards; */
+  transition: 1s;
+}
+@keyframes gatete_abajo{
+  from {
+    
+    align-items: center;
+    margin-top: 0;
+  }
+  to {
+    align-items: center;
+    margin-top: 50%;
+  }
+}
+
+@keyframes gatete_arriba{
+  from {
+    align-items: center;
+    margin-top: 50%;
+  }
+  to {
+    align-items: center;
+    margin-top: 0;
+  }    
+}
+
+img {
+  min-width: 0%;
+  max-width: 100%;
+  min-height: 0%;
+  max-height: 100%;
+  opacity: 88%;
+}
+
+img:hover {
+  opacity: 100%;
+}
+
+.item1 {
+  grid-column-start: 1;
+  grid-column-end: 4;
+}
+
+footer{
+  text-align:start;
+}
+.firma {
+  color: blanchedalmond;
+  font-size: 8px;
+  text-align: end;
+}

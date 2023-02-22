@@ -55,16 +55,66 @@ nav a {
   text-decoration: none;
   color: black;
 }
+/*
+.arrow {
+  text-decoration: none;
+  color:aqua;
+  position: relative;
+  margin:auto;
+}
+
+.arrow:hover {
+  color: #f0d8df;
+}
+*/
 .quien {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  flex-basis: 25vh;
+  min-width: 40vw;
+}
+.quien p, .quien img, .int p, .int img {
+  margin: 2vw;
+  overflow:auto;
+}
+.int {
   display:flex;
   justify-content: center;
   align-items: center;
   gap:5%;
   flex-basis: 25vh;
+  min-width: 40vw;
 }
 .quien img {
-  width:auto;
-  height: 50%;
+  width: auto;
+  height: auto;
+  max-height: 90%; 
+}
+.proLink {
+  background-color: aqua;
+  text-decoration: none;
+  color:black;
+  padding: 5%;
+  border-radius: 2vw;
+}
+.proLink a {
+  text-decoration: none;
+  color:black;
+}
+.proy {  
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  gap:5%;
+  flex-basis: 25vh;
+  min-width: 40vw;
+}
+.proy a {
+  align-self: flex-start;
+  justify-self:center;
+  flex-grow: 100%;
 }
 div.header-contenedor-flex {
   display:flex;
