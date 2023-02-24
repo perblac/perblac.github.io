@@ -124,6 +124,20 @@ nav a {
   justify-self:center;
   flex-grow: 100%;
 }
+.proy img{
+  margin: 2vw 0 2vw 14vw;
+  overflow:hidden;
+  width: auto;
+  height: auto;
+  min-width: 40%;
+  max-width: 256px;
+}
+.proyLinks {
+  display:flex;
+  flex-direction: column;
+  margin: 2vw;
+  justify-content: space-around;
+}
 div.header-contenedor-flex {
   display:flex;
   height: 10%;
@@ -132,18 +146,6 @@ div.header-contenedor-flex {
   align-items: center;
   flex-direction: column;
 }
-/*
-div.header-contenedor-flex::before {
-  content:"";
-  position: absolute;
-  top:0;
-  left:0;
-  width: 100%;
-  height: 100%;
-  background:rgba(0,0,0,0.8);
-  z-index: -1;
-}
-*/
 
 div.header-contenedor-flex p {
   color: #f0d8df;
@@ -172,11 +174,12 @@ aside, footer {
 }
 
 footer {
-  height: 10vh;
+  height: 20vh;
   display:flex;
   justify-content: center;
   align-items: end;
   padding: 1rem;
+  /*max-width: 40vw;*/
   flex-grow: 2;
 }
 
@@ -196,6 +199,16 @@ footer a:active {
   color: red;
 } 
 
+footer img{
+  margin: 2vw;
+  overflow:hidden;
+  width: auto;
+  height: 480px;
+  min-height: 40%;
+  max-height: 100%;
+  align-self: center;
+}
+
 @media (min-width: 800px) {
   div.header-contenedor-flex p {
   font-size: 40px;
@@ -204,8 +217,20 @@ footer a:active {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
+    justify-content: space-between;
   }
-  aside, footer {
+  .proy {
+    margin:4% auto 5% 4%;
+  }
+  .proy img{
+    margin: 2vw;
+    overflow:hidden;
+    width: auto;
+    height: auto;
+    min-width: 40%;
+    max-width: 256px;
+  }
+  aside {
     border: 5px dashed white;
     width: 44vw;
     height: 60vh;
@@ -214,7 +239,19 @@ footer a:active {
   }
   footer {
     align-self: flex-end;
-    height: 10vh;;
+  }
+  footer .arrow{
+    order:-1;
+    margin:0 0 0 -20%;
+    align-self: center;
+  }
+  footer img{
+    margin: 0vw;
+    overflow:hidden;
+    width: auto;
+    height: 50%;
+    min-height: 40%;
+    max-height: 100%;
   }
 }
 @media (max-width: 800px) {
