@@ -69,9 +69,10 @@ h1 {
 .grid-container > div:not(:hover) {
   /*align-items: start;*/
   
-  animation: gatete_arriba 2s 1 normal forwards; */
+  animation: gatete_arriba 2s 1 normal forwards;
   transition: 1s;
 }
+
 @keyframes gatete_abajo{
   from {
     
@@ -112,11 +113,32 @@ img:hover {
   grid-column-end: 4;
 }
 
+a {
+  background-color: #632a50;
+  color:#91f5ad;  
+  padding:8px;
+  border-radius: 25px;
+  text-decoration: none;
+  transition: 0.75s;  
+  position: absolute;
+  bottom: 3vh;
+  left: 1vw;
+}
+
+a:hover {
+  background-color:#c2e812;
+  color:#632a50;
+}
+
 footer{
   text-align:start;
 }
+
 .firma {
   color: blanchedalmond;
   font-size: 8px;
   text-align: end;
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
 }
