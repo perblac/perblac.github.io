@@ -1,0 +1,272 @@
+* {
+  --dark1: #632a50;
+  --dark2: #745296;
+  --light1: #91f5ad;
+  --light2: #c2e812;
+  --gris: #8b9eb7;
+  margin: 1px;
+  padding: 1px;
+  border: 0px dotted gray;
+  scroll-behavior: smooth;
+}
+
+@keyframes boing {
+  0% {
+    transform: skew(0deg 0deg);
+  }
+  30% {
+    transform: skew(-25deg -25deg);
+  }
+  40% {
+    transform: skew(15deg, 15deg);
+  }
+  50% {
+    transform: skew(-15deg, -15deg);
+  }
+  65% {
+    transform: skew(5deg, 5deg);
+  }
+  75% {
+    transform: skew(-5deg, -5deg);
+  }
+  100% {
+    transform: skew(0deg 0deg);
+  }
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes animatebottom {
+  from {
+    bottom: -100px;
+    opacity: 0;
+  }
+  to {
+    bottom: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes flipatext {
+  to {
+    background-position: 300% center;
+  }
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid var(--dark1);
+  border-radius: 50%;
+  border-top: 16px solid var(--light1);
+  -webkit-animation: spin 0.5s linear infinite;
+  animation: spin 0.5s linear infinite;
+}
+
+.animate-bottom {
+  position: relative;
+  -webkit-animation-name: animatebottom;
+  -webkit-animation-duration: 1s;
+  animation-name: animatebottom;
+  animation-duration: 1s;
+}
+
+#myDiv {
+  display: none;
+  text-align: center;
+}
+
+/* Header */
+header {
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  left: -1px;
+  top: -1px;
+  background-color:var(--gris);
+  color: var(--dark1);
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
+}
+
+.header-contenedor-flex p {
+  font-size: 4vw;
+  font-variant: small-caps;
+  font-weight: 600;
+  border-bottom: 1px dotted var(--dark1);
+  background: linear-gradient(
+    to right,
+    var(--dark1) 10%,
+    var(--dark2) 50%,
+    var(--light1) 60%
+  );
+  background-size: auto auto;
+  background-clip: border-box;
+  background-size: 300% auto;
+  color: #fff;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: flipatext 5s linear infinite;
+}
+
+#menu {
+  position: absolute;
+  top: 1vh;
+  left: 2%;
+  background-color: var(--dark1);
+  /*
+  width: 20px;
+  height: 20px;
+  */
+  width: 2vw;
+  height: 2vw;
+  border: 5px solid transparent;
+  border-radius: 100%;
+  transition: 1s;
+  cursor: pointer;
+}
+
+#menu:hover {
+  /*
+  width: 25px;
+  height: 25px;
+  */  
+  width: 3vw;
+  height: 3vw;
+  border-radius: 0;
+  border: 0px solid transparent;
+  background-color: var(--light2);
+}
+
+nav {
+  display: flex;
+  flex-direction: row;
+  margin: 1px;
+  margin-left: 1vw;
+  gap: 2vw;
+}
+
+nav a {
+  display: block;
+  background-color: var(--dark1);
+  color: var(--light1);
+  border-radius: 25% 0;
+  text-decoration: none;
+  font-weight: 200;
+  transition: 0.5s;
+  padding: 1px;
+}
+
+nav a:hover,
+.proyLinks a:hover {
+  background-color: var(--light2);
+  color: var(--dark1);
+  animation: boing 0.5s both;
+}
+
+/* Main */
+.main aside {
+  display: flex;
+  width: 100 vw;
+  height: 80vh;
+  padding-top: 15vh;
+  color: var(--light1);
+  scroll-snap-align: start;
+  justify-content: center;
+  align-items: center;
+}
+
+aside img {
+  margin: 10%;
+}
+
+.nomSec {
+  display: block;
+  position: absolute;
+  margin-bottom: 60vh;
+  color: var(--light2);
+  font-family: "Segoe Print", "Bradley Hand", Chilanka, TSCu_Comic, casual,
+    cursive;
+  font-size: 2em;
+  font-weight: 500;
+}
+
+.quien img {
+  border-radius: 25px;
+}
+
+.intP {
+  display: block;
+  width: 40%;
+  text-align: justify;
+}
+
+.proy {
+  gap: 10%;
+}
+
+.proyLinks a {
+  display: block;
+  background-color: var(--dark1);
+  color: var(--light1);
+  text-decoration: none;
+  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
+    source-sans-pro, sans-serif;
+  font-weight: 200;
+  border-radius: 50% 0;
+  transition: 0.5s;
+}
+
+img {
+  max-height: 50%;
+  width: auto;
+}
+
+/* Footer */
+footer {
+  display: flex;
+  height: 5vh;
+  bottom: 0px;
+  position: fixed;
+  width: 100%;
+  margin: 0px;
+  padding: 0px;
+  left: -1px;
+  background-color: var(--gris);
+  justify-content: center;
+  align-items: center;
+}
+
+footer a {
+  color: var(--dark1);
+  text-decoration: none;
+}
+
+footer a:hover {
+  background-color: var(--light1);
+}
