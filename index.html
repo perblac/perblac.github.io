@@ -11,6 +11,7 @@
 </head>
 
 <body onload="myFunction()" style="margin:0;">
+    
     <div id="loader"></div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
         <header>
@@ -39,6 +40,11 @@
             </nav>
         </header>
         <div class="main">
+        <div id="eligePaleta">
+            <button value="pal1">
+                    <img src="pal1.png">
+            </button>
+        </div>
             <a name="sec-quien"></a>
             <aside class="quien">
                 <img src="foto.jpg">
@@ -95,14 +101,16 @@
     <script>
         var menuBtn = document.getElementById("menu");
         var barra = document.getElementById("navig");
-
         menuBtn.addEventListener("click", oculta);
 
         function oculta() {
             if(barra.style.display !== "none"){
-                barra.style.display = "none";   
+                barra.style.display = "none";
+                menuBtn.hover.style.animation = "baja 0.2s ease-in-out infinite;"
+
             } else {
-                barra.style.display = "flex";  
+                barra.style.display = "flex";
+                menuBtn.hover.style.animation = "none";
             }            
         }
 
