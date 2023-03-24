@@ -9,9 +9,16 @@
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
 </head>
 
-<body onload="myFunction()" style="margin:0;">
+<body onload="cargaLoader()" style="margin:0;">
 
-    <div id="loader"></div>
+    <div id="loader">
+        <span id="spinner"></span>
+        <div id="carga">
+            <h1 id="hint1">Perblac Portfolio</h1>
+            <br/>
+            <h4 id="hint2">Haga clic para continuar</h4>
+        </div>
+    </div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
         <header id="cabecera">
             <div class="header-contenedor-flex">
@@ -160,12 +167,21 @@
 
         var myVar;
 
-        function myFunction() {
-            myVar = setTimeout(showPage, 1000);
-            //oculta();
+        function cargaLoader() {
+            myVar = setTimeout(muestraPagina, 1000);
         }
 
-        function showPage() {
+        function muestraPagina() {
+            document.getElementById("spinner").style.display = "none";
+            document.getElementById("loader").style.color = "var(--dark1)";
+            document.getElementById("hint1").style.backgroundColor = "var(--light1)";
+            document.getElementById("hint2").style.backgroundColor = "var(--light1)";
+            document.getElementById("loader").style.cursor = "pointer";
+            document.getElementById("loader").addEventListener("click", continua);
+            
+        }
+
+        function continua() {
             document.getElementById("loader").style.display = "none";
             document.getElementById("myDiv").style.display = "block";
         }
