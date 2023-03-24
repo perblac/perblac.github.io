@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="pal0">
 
 <head>
     <meta charset='utf-8'>
@@ -7,44 +7,52 @@
     <title>Portfolio</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
-    <script src='main.js'></script>
 </head>
 
 <body onload="myFunction()" style="margin:0;">
-    
+
     <div id="loader"></div>
     <div style="display:none;" id="myDiv" class="animate-bottom">
-        <header>
+        <header id="cabecera">
             <div class="header-contenedor-flex">
                 <button id="menu">
 
                 </button>
                 <p>Rubén Perblac</p>
             </div>
-            <nav id="navig">
-                <a href="#sec-quien">
-                    <div>
-                        <p>Quién soy</p>
-                    </div>
-                </a>
-                <a href="#sec-intereses">
-                    <div>
-                        <p>Intereses</p>
-                    </div>
-                </a>
-                <a href="#sec-proyectos">
-                    <div>
-                        <p>Proyectos</p>
-                    </div>
-                </a>
-            </nav>
         </header>
+        <nav id="navig">
+            <a href="#sec-quien" id="navBoton">
+                <div>
+                    <p>Quién soy</p>
+                </div>
+            </a>
+            <a href="#sec-intereses">
+                <div>
+                    <p>Intereses</p>
+                </div>
+            </a>
+            <a href="#sec-proyectos">
+                <div>
+                    <p>Proyectos</p>
+                </div>
+            </a>
+        </nav>
         <div class="main">
-        <div id="eligePaleta">
-            <button value="pal1">
+            <div id="eligePaleta">
+                <button onclick="setPal(0)">
+                    <img src="pal0.png">
+                </button>
+                <button onclick="setPal(1)">
                     <img src="pal1.png">
-            </button>
-        </div>
+                </button>
+                <button onclick="setPal(2)">
+                    <img src="pal2.png">
+                </button>
+                <button onclick="setPal(3)">
+                    <img src="pal3.png">
+                </button>
+            </div>
             <a name="sec-quien"></a>
             <aside class="quien">
                 <img src="foto.jpg">
@@ -56,7 +64,8 @@
             <a name="sec-intereses"></a>
             <aside class="int">
 
-                <p class="intP">Me gustan los ordenadores desde chiquitito. Sobre todo siempre me han atraido los gráficos de las
+                <p class="intP">Me gustan los ordenadores desde chiquitito. Sobre todo siempre me han atraido los
+                    gráficos de las
                     consolas y máquinas recreativas.<br />Me apasiona leer y aprender cosas nuevas.</p>
                 <img src="palm.gif">
                 <div class="nomSec">
@@ -85,6 +94,9 @@
             </aside>
             <a name="sec-contacto"></a>
             <footer>
+                <button onclick="eligePal()">
+                    <img src="paleta.svg">
+                </button>
                 <a class="github link" href="https://github.com/perblac">
                     <svg height="16" aria-hidden="true" viewBox="0 0 16 16" version="1.1" width="32"
                         data-view-component="true" class="octicon octicon-mark-github v-align-middle">
@@ -104,20 +116,53 @@
         menuBtn.addEventListener("click", oculta);
 
         function oculta() {
-            if(barra.style.display !== "none"){
-                barra.style.display = "none";
-                menuBtn.hover.style.animation = "baja 0.2s ease-in-out infinite;"
+            var altura = document.getElementById("cabecera").offsetHeight;
+            var altBoton = document.getElementById("navBoton").offsetHeight;
+            if (barra.style.top >= altura + "px") {
+                barra.style.top = "-" + altBoton + "px";
+                menuBtn.classList.remove('noanim');
 
             } else {
-                barra.style.display = "flex";
-                menuBtn.hover.style.animation = "none";
-            }            
+                barra.style.top = altura +"px";
+                menuBtn.classList.add('noanim');
+            }
+        }
+
+        function eligePal() {
+            var menuPal = document.getElementById("eligePaleta");
+            menuPal.style.display = "flex";
+        }
+
+        var base = document.documentElement;
+
+        function setPal(numpal) {
+            var clase0 = base.classList;
+            switch (numpal) {
+                case 0:
+                    base.classList.replace(clase0, 'pal0');
+                    break;
+                case 1:
+                    base.classList.replace(clase0, 'pal1');
+                    break;
+                case 2:
+                    base.classList.replace(clase0, 'pal2');
+                    break;
+                case 3:
+                    base.classList.replace(clase0, 'pal3');
+                    break;
+
+            }
+            var menuPal = document.getElementById("eligePaleta");
+            menuPal.style.display = "none";
         }
 
         var myVar;
 
         function myFunction() {
             myVar = setTimeout(showPage, 1000);
+            var altBoton = document.getElementById("navBoton").offsetHeight;
+            var barra = document.getElementById("navig");
+            barra.style.top = "-" + altBoton + "px";
             oculta();
         }
 
@@ -126,7 +171,7 @@
             document.getElementById("myDiv").style.display = "block";
         }
 
-        
+
     </script>
 </body>
 
