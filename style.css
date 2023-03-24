@@ -127,14 +127,14 @@ html {
   height: 100vh;
   background-color: var(--dark2);
   z-index: 1001;
-  display:flex;
+  display: flex;
   justify-content: center;
   align-items: center;
-  color:var(--dark2);
+  color: var(--dark2);
   transition: 3s;
 }
 
-#loader>span {
+#loader > span {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -149,18 +149,19 @@ html {
 }
 
 #carga {
-  position:fixed;
-  display:flex;  
+  position: fixed;
+  display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: 'ClickuperRegular';
-  font-weight:normal;
-  font-style: normal; 
+  font-family: "ClickuperRegular";
+  font-weight: normal;
+  font-style: normal;
   /*font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;*/
 }
 
-#carga h1, #carga h4 {
+#carga h1,
+#carga h4 {
   display: block;
   text-align: center;
   font-variant: small-caps;
@@ -217,10 +218,10 @@ header {
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: flipatext 5s linear infinite;  
-  font-family: 'ClickuperRegular';
-   font-weight: bold;
-   font-style: normal; 
+  animation: flipatext 5s linear infinite;
+  font-family: "ClickuperRegular";
+  font-weight: bold;
+  font-style: normal;
 }
 
 #menu {
@@ -263,10 +264,10 @@ nav {
   z-index: 99;
   top: -6vh;
   transition: 0.5s;
-  
-  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
-  font-variant:normal;
-  
+
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
+  font-variant: normal;
 }
 
 nav a {
@@ -309,11 +310,11 @@ aside img {
   position: absolute;
   margin-bottom: 60vh;
   color: var(--light2);
-  font-family: 'Freehand521BTRegular';
+  font-family: "Freehand521BTRegular";
   font-weight: normal;
-  font-style: normal; 
+  font-style: normal;
   font-size: min(4vw, 30px);
-  font-variant:normal;
+  font-variant: normal;
 }
 
 .quien img {
@@ -336,14 +337,15 @@ aside img {
   color: var(--light1);
   border: 1px solid var(--light2);
   text-decoration: none;
-  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-family: ui-monospace, "Cascadia Code", "Source Code Pro", Menlo, Consolas,
+    "DejaVu Sans Mono", monospace;
   font-weight: 200;
   border-radius: 50% 0;
   transition: 0.5s;
 }
 
 img {
-  max-height: min(50%,45vw);
+  max-height: min(50%, 45vw);
   width: auto;
 }
 
@@ -362,12 +364,12 @@ footer {
   align-items: center;
 }
 
-footer>button {
+footer > button {
   background-color: transparent;
-  border:0;
+  border: 0;
 }
 
-footer>button>img {
+footer > button > img {
   position: fixed;
   right: 0.1vh;
   bottom: 0.5vh;
@@ -376,16 +378,16 @@ footer>button>img {
   z-index: 1010;
 }
 
-footer>button>img:hover {
+footer > button > img:hover {
   background-color: var(--light1);
   cursor: grabbing;
 }
-footer>a {
+footer > a {
   color: var(--dark1);
   text-decoration: none;
 }
 
-footer>a:hover {
+footer > a:hover {
   background-color: var(--light1);
 }
 
@@ -420,4 +422,38 @@ footer>a:hover {
 #eligePaleta span button:hover {
   background-color: var(--light1);
   cursor: pointer;
+}
+
+/*-------------------- Responsive --------------------*/
+@media (max-width: 400px) {
+  #navig,
+  aside p {
+    font-size: 4vw;
+  }
+
+  .nomSec {
+    margin-bottom: 90vh;
+  }
+
+  .int,
+  .proy {
+    flex-direction: column;
+  }
+
+  .intP {
+    width: 90%;
+  }
+
+  .proLinks {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  footer > button > img {
+    height: min(4vh, 10vw);
+    width: auto;
+    right: 1vw;
+    bottom: max(1vh, 2vw);
+  }
 }
