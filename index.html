@@ -15,9 +15,7 @@
     <div style="display:none;" id="myDiv" class="animate-bottom">
         <header id="cabecera">
             <div class="header-contenedor-flex">
-                <button id="menu">
-
-                </button>
+                <button id="menu"></button>
                 <p>Rubén Perblac</p>
             </div>
         </header>
@@ -41,19 +39,19 @@
         <div class="main">
             <div id="eligePaleta">
                 <span>
-                <button onclick="setPal(0)">
-                    <img src="pal0.png">
-                </button>
-                <button onclick="setPal(1)">
-                    <img src="pal1.png">
-                </button>
-                <button onclick="setPal(2)">
-                    <img src="pal2.png">
-                </button>
-                <button onclick="setPal(3)">
-                    <img src="pal3.png">
-                </button>
-            </span>
+                    <button onclick="setPal(0)">
+                        <img src="pal0.png">
+                    </button>
+                    <button onclick="setPal(1)">
+                        <img src="pal1.png">
+                    </button>
+                    <button onclick="setPal(2)">
+                        <img src="pal2.png">
+                    </button>
+                    <button onclick="setPal(3)">
+                        <img src="pal3.png">
+                    </button>
+                </span>
             </div>
             <a name="sec-quien"></a>
             <aside class="quien">
@@ -112,6 +110,8 @@
         </div>
     </div>
 
+
+
     <script>
         var menuBtn = document.getElementById("menu");
         var barra = document.getElementById("navig");
@@ -125,7 +125,7 @@
                 menuBtn.classList.remove('noanim');
 
             } else {
-                barra.style.top = altura +"px";
+                barra.style.top = altura + "px";
                 menuBtn.classList.add('noanim');
             }
         }
@@ -162,10 +162,7 @@
 
         function myFunction() {
             myVar = setTimeout(showPage, 1000);
-            var altBoton = document.getElementById("navBoton").offsetHeight;
-            var barra = document.getElementById("navig");
-            barra.style.top = "-" + altBoton + "px";
-            oculta();
+            //oculta();
         }
 
         function showPage() {

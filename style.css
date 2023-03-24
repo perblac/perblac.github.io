@@ -1,16 +1,17 @@
+/*-------------------- Base --------------------*/
 * {
   margin: 1px;
   padding: 1px;
-  border: 0px dotted gray;
+  border: 0 dotted var(--gris);
   scroll-behavior: smooth;
 }
 
 .pal0 {
-  --dark1: #22223B;
-  --dark2: #4A4E69;
-  --light1: #9A8C98;
-  --light2: #C9ADA7;
-  --gris: #F2E9E4;
+  --dark1: #22223b;
+  --dark2: #4a4e69;
+  --light1: #9a8c98;
+  --light2: #c9ada7;
+  --gris: #f2e9e4;
 }
 
 .pal1 {
@@ -22,21 +23,33 @@
 }
 
 .pal2 {
-  --dark1: #1D3557;
-  --dark2: #457B9D;
-  --light1: #A8DADC;
-  --light2: #F1FAEE;
-  --gris: #E63946;
+  --dark1: #1d3557;
+  --dark2: #457b9d;
+  --light1: #a8dadc;
+  --light2: #f1faee;
+  --gris: #e63946;
 }
 
 .pal3 {
-  --dark1: #00296B;
-  --dark2: #003F88;
-  --light1: #FDC500;
-  --light2: #FFD500;
-  --gris: #00509D;
+  --dark1: #00296b;
+  --dark2: #003f88;
+  --light1: #fdc500;
+  --light2: #ffd500;
+  --gris: #00509d;
 }
 
+html {
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  background: radial-gradient(black 15%, transparent 16%) 0 0,
+    radial-gradient(black 15%, transparent 16%) 8px 8px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
+    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
+  background-color: #282828;
+  background-size: 16px 16px;
+}
+
+/*-------------------- Animaciones y loader --------------------*/
 @keyframes boing {
   0% {
     transform: skew(0deg 0deg);
@@ -59,17 +72,6 @@
   100% {
     transform: skew(0deg 0deg);
   }
-}
-
-html {
-  scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
-  background: radial-gradient(black 15%, transparent 16%) 0 0,
-    radial-gradient(black 15%, transparent 16%) 8px 8px,
-    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 0 1px,
-    radial-gradient(rgba(255, 255, 255, 0.1) 15%, transparent 20%) 8px 9px;
-  background-color: #282828;
-  background-size: 16px 16px;
 }
 
 @keyframes spin {
@@ -99,7 +101,7 @@ html {
   }
   25% {
     margin-top: 0.5vh;
-    margin-left:0.25vw;
+    margin-left: 0.25vw;
   }
   50% {
     margin-top: 1vh;
@@ -107,7 +109,7 @@ html {
   }
   75% {
     margin-top: 0.5vh;
-    margin-left:-0.25vw;
+    margin-left: -0.25vw;
   }
   100% {
     margin-top: 0;
@@ -148,39 +150,7 @@ html {
   text-align: center;
 }
 
-/* Paleta */
-#eligePaleta {
-  position: fixed;
-  display: none;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  z-index: 100;
-  margin:auto auto;
-  left: 0;
-  top: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(0,0,0,0.75);
-}
-#eligePaleta span {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  
-  background-color: rgba(128,128,128,0.8);
-  z-index: 101;
-}
-#eligePaleta span button {
-  background-color:transparent;
-}
-#eligePaleta span button:hover {
-  background-color:var(--light1);
-  cursor:pointer;
-}
-
-/* Header */
+/*-------------------- Header --------------------*/
 header {
   position: fixed;
   z-index: 100;
@@ -189,7 +159,7 @@ header {
   padding: 0px;
   left: -1px;
   top: -1px;
-  background-color:var(--gris);
+  background-color: var(--gris);
   color: var(--dark1);
   font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
     source-sans-pro, sans-serif;
@@ -248,14 +218,14 @@ header {
 }
 nav {
   display: flex;
-  flex-direction: row;  
+  flex-direction: row;
   margin: 1px;
   margin-left: 1vw;
   gap: 2vw;
   position: fixed;
   z-index: 99;
-  top: 8vh;
-  transition:.5s;
+  top: -6vh;
+  transition: 0.5s;
 }
 
 nav a {
@@ -277,7 +247,7 @@ nav a:hover,
   animation: boing 0.5s both;
 }
 
-/* Main */
+/*-------------------- Main --------------------*/
 .main aside {
   display: flex;
   width: 100 vw;
@@ -336,7 +306,7 @@ img {
   width: auto;
 }
 
-/* Footer */
+/*-------------------- Footer --------------------*/
 footer {
   display: flex;
   height: 5vh;
@@ -351,7 +321,12 @@ footer {
   align-items: center;
 }
 
-footer button img{
+footer>button {
+  background-color: transparent;
+  border:0;
+}
+
+footer>button>img {
   position: fixed;
   right: 0.1vh;
   bottom: 0.5vh;
@@ -360,15 +335,48 @@ footer button img{
   z-index: 1010;
 }
 
-footer button img:hover {
+footer>button>img:hover {
   background-color: var(--light1);
-  cursor:grabbing;
+  cursor: grabbing;
 }
-footer a {
+footer>a {
   color: var(--dark1);
   text-decoration: none;
 }
 
-footer a:hover {
+footer>a:hover {
   background-color: var(--light1);
+}
+
+/*-------------------- Paletas --------------------*/
+#eligePaleta {
+  position: fixed;
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
+  margin: auto auto;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.75);
+}
+#eligePaleta span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1vh;
+  background-color: rgba(128, 128, 128, 0.8);
+  z-index: 101;
+}
+#eligePaleta span button {
+  padding: 1vh;
+  background-color: transparent;
+}
+#eligePaleta span button:hover {
+  background-color: var(--light1);
+  cursor: pointer;
 }
