@@ -154,7 +154,10 @@ html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
+  font-family: 'ClickuperRegular';
+  font-weight:normal;
+  font-style: normal; 
+  /*font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;*/
 }
 
 #carga h1, #carga h4 {
@@ -191,13 +194,13 @@ header {
   left: -1px;
   top: -1px;
   background-color: var(--gris);
-  color: var(--dark1);  
+  color: var(--dark1);
   font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
     source-sans-pro, sans-serif;
 }
 
 .header-contenedor-flex p {
-  font-size: 4vw;
+  font-size: min(6vw, 40px);
   font-variant: small-caps;
   font-weight: 600;
   border-bottom: 1px dotted var(--dark1);
@@ -215,6 +218,9 @@ header {
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: flipatext 5s linear infinite;  
+  font-family: 'ClickuperRegular';
+   font-weight: bold;
+   font-style: normal; 
 }
 
 #menu {
@@ -257,7 +263,10 @@ nav {
   z-index: 99;
   top: -6vh;
   transition: 0.5s;
+  
   font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
+  font-variant:normal;
+  
 }
 
 nav a {
@@ -300,9 +309,11 @@ aside img {
   position: absolute;
   margin-bottom: 60vh;
   color: var(--light2);
-  font-family: Bahnschrift, 'DIN Alternate', 'Franklin Gothic Medium', 'Nimbus Sans Narrow', sans-serif-condensed, sans-serif;
-  font-size: 2em;
-  font-weight: 500;
+  font-family: 'Freehand521BTRegular';
+  font-weight: normal;
+  font-style: normal; 
+  font-size: min(4vw, 30px);
+  font-variant:normal;
 }
 
 .quien img {
@@ -325,15 +336,14 @@ aside img {
   color: var(--light1);
   border: 1px solid var(--light2);
   text-decoration: none;
-  font-family: Seravek, "Gill Sans Nova", Ubuntu, Calibri, "DejaVu Sans",
-    source-sans-pro, sans-serif;
+  font-family: ui-monospace, 'Cascadia Code', 'Source Code Pro', Menlo, Consolas, 'DejaVu Sans Mono', monospace;
   font-weight: 200;
   border-radius: 50% 0;
   transition: 0.5s;
 }
 
 img {
-  max-height: 50%;
+  max-height: min(50%,45vw);
   width: auto;
 }
 
