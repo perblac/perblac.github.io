@@ -40,6 +40,7 @@
         </nav>
         <div class="main">
             <div id="eligePaleta">
+                <span>
                 <button onclick="setPal(0)">
                     <img src="pal0.png">
                 </button>
@@ -52,6 +53,7 @@
                 <button onclick="setPal(3)">
                     <img src="pal3.png">
                 </button>
+            </span>
             </div>
             <a name="sec-quien"></a>
             <aside class="quien">
@@ -119,7 +121,7 @@
             var altura = document.getElementById("cabecera").offsetHeight;
             var altBoton = document.getElementById("navBoton").offsetHeight;
             if (barra.style.top >= altura + "px") {
-                barra.style.top = "-" + altBoton + "px";
+                barra.style.top = "-" + altBoton * 1.5 + "px";
                 menuBtn.classList.remove('noanim');
 
             } else {

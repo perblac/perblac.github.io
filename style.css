@@ -161,12 +161,21 @@ html {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.5);
+  background-color: rgba(0,0,0,0.75);
 }
-#eligePaleta button {
+#eligePaleta span {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+  background-color: rgba(128,128,128,0.8);
+  z-index: 101;
+}
+#eligePaleta span button {
   background-color:transparent;
 }
-#eligePaleta button:hover {
+#eligePaleta span button:hover {
   background-color:var(--light1);
   cursor:pointer;
 }
