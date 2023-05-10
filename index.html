@@ -171,6 +171,7 @@
         var myVar;
 
         function cargaLoader() {
+            document.getElementById("loader").addEventListener("click", continua);
             myVar = setTimeout(muestraPagina, 1000);
         }
 
@@ -180,7 +181,7 @@
             document.getElementById("hint1").style.backgroundColor = "var(--light1)";
             document.getElementById("hint2").style.backgroundColor = "var(--light1)";
             document.getElementById("loader").style.cursor = "pointer";
-            document.getElementById("loader").addEventListener("click", continua);
+            //document.getElementById("loader").addEventListener("click", continua);
 
         }
 
